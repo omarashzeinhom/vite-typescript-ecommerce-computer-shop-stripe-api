@@ -9,6 +9,7 @@ export default function Nav() {
             alt="LOGO"
             width="100%"
             height={30}
+            loading="lazy"
           />
         </a>
 
@@ -17,13 +18,10 @@ export default function Nav() {
           <a className="active" href="/">
             Home
           </a>
-          <a href="/">Shop</a>
+          <a href="/shop">Shop</a>
         </div>
         {/*>>>> TABS END <<<<*/}
-
-        <div className="nav-right">
-          <a className="brand">🛒</a>
-        </div>
+        <a className="brand">🛒</a>
       </div>
     </nav>
   );
