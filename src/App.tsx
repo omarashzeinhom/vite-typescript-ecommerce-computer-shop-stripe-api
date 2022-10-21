@@ -7,8 +7,11 @@ export default function App() {
 
   return (
     <div className="row">
+      <div className="col">
       <Nav/>
-      <h1>Vite E-commerce with stripe Api in 2 Days[]</h1>
+
+      </div>
+      <br/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/shop" element={<Shop/>}/>

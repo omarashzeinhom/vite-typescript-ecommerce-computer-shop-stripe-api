@@ -37,16 +37,19 @@ const stripe = new Stripe(
 
 - [react-router-dom](https://yarnpkg.com/package/react-router-dom)
   
-- [chota 3kb cssframework](https://yarnpkg.com/package/chota)
+- [mdb-react-ui-kit](https://mdbootstrap.com/docs/react/getting-started/installation/)
   
 - [stripe js sdk](https://github.com/stripe/stripe-node#installation)
 
 - Packages were added using 
-  ```yarn add chota react-router-dom stripe```
+  ```yarn add mdb-react-ui-kit react-router-dom stripe @fortawesome/fontawesome-free```
 
+and add CSS FILES to 
+`index.html`
+``
 #### References
 
 1. [React TypeScript offical language docs](https://www.typescriptlang.org/docs/handbook/react.html)
 2. [Stripe - Usage with TypeScript](https://github.com/stripe/stripe-node#usage-with-typescript)
 3. [cjav_dev answer at  How to use stripe types in typescript Vikram Khemlani](https://stackoverflow.com/questions/59903956/how-to-use-stripe-types-in-typescript)
-4. [chota 3kb css framework](https://yarnpkg.com/package/chota)
+4. [Navbar - MDB Boostrap React](https://mdbootstrap.com/docs/react/navigation/navbar/)
