@@ -92,8 +92,10 @@ export default function Nav() {
               className="form-control"
               placeholder="Type query"
               aria-label="Search"
+              name="q"
+              autoComplete="Test"
             />
-            <MDBBtn color="primary">Search</MDBBtn>
+            <MDBBtn color="dark">Search</MDBBtn>
           </form>
         </MDBCollapse>
 

@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "HeadPhones",
+    "price": 40,
+    "quantity": 10,
+    "imageLink": "https://images.pexels.com/photos/205926/pexels-photo-205926.jpeg?auto=compress&cs=tinysrgb&w=150&h=150dpr=1"
+  },
+  {
+    "id": 2,
+    "title": "Keyboard",
+    "price": 50,
+    "quantity": 10,
+    "imageLink": "https://images.pexels.com/photos/1772123/pexels-photo-1772123.jpeg?auto=compress&cs=tinysrgb&w=150&h=150dpr=1"
+  },
+  {
+    "id": 3,
+    "title": "Bag",
+    "price": 100,
+    "quantity": 10,
+    "imageLink": "https://images.pexels.com/photos/2081199/pexels-photo-2081199.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1"
+  },
+  {
+    "id": 4,
+    "title": "128GB SD Card",
+    "price": 10,
+    "quantity": 10,
+    "imageLink": "https://images.pexels.com/photos/1738641/pexels-photo-1738641.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1"
+  },
+  {
+    "id": 5,
+    "title": "Speakers",
+    "price": 80,
+    "quantity": 10,
+    "imageLink": "https://images.pexels.com/photos/1279107/pexels-photo-1279107.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1"
+  },
+  {
+    "id": 6,
+    "title": "Watch",
+    "price": 150,
+    "quantity": 10,
+    "imageLink": "https://images.pexels.com/photos/2783873/pexels-photo-2783873.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1"
+  },
+  {
+    "id": 7,
+    "title": "Camera",
+    "price": 150,
+    "quantity": 10,
+    "imageLink": "https://images.pexels.com/photos/821651/pexels-photo-821651.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1"
+  }
+]
