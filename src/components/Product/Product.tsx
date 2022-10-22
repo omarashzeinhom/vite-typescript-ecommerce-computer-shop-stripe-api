@@ -1,14 +1,13 @@
 import {
-  MDBCol,
   MDBCard,
   MDBCardBody,
   MDBCardFooter,
   MDBBtn,
   MDBCardImage,
   MDBCardHeader,
+  MDBBadge,
+  MDBCardText,
 } from "mdb-react-ui-kit";
-import React from "react";
-import products from "../../data/products.json";
 
 type ProductProps = {
   id: number;
@@ -26,28 +25,34 @@ export default function Product({
   quantity,
 }: ProductProps) {
   return (
-      <MDBCard>
-        <MDBCardHeader>{title}</MDBCardHeader>
+    <MDBCard key={id}>
+      <MDBCardHeader>{title}</MDBCardHeader>
 
-        <MDBCardImage
-          width={150}
-          height={150}
-          loading="lazy"
-          alt={title}
-          src={imageLink}
-          style={{
-            borderRadius: "8px",
-            boxShadow: "0.1rem .1rem .1rem .1rem gray",
-          }}
-        />
-        <MDBCardBody>
-          <p>{price + "$"}</p>
+      <MDBCardImage
+        width={"100%"}
+        height={"100%"}
+        loading="lazy"
+        alt={title}
+        src={imageLink}
+        style={{
+          borderRadius: "8px",
+          boxShadow: "0.1rem .1rem .1rem .1rem gray",
+          objectFit: "cover",
+          maxWidth: "99%",
+          maxHeight: "150px",
+        }}
+      />
+      <MDBCardBody>
+        <MDBCardText>
+          {price + "$"} <MDBBadge color="dark"> Quantity:{quantity}</MDBBadge>
+        </MDBCardText>
+      </MDBCardBody>
 
-          <br />
-        </MDBCardBody>
-        <MDBCardFooter>
-          <MDBBtn color="success">+</MDBBtn>
-        </MDBCardFooter>
-      </MDBCard>
+      <MDBCardFooter>
+        <MDBBtn color="success" block>
+          +
+        </MDBBtn>
+      </MDBCardFooter>
+    </MDBCard>
   );
 }
