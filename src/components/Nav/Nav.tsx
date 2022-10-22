@@ -7,14 +7,15 @@ import {
   MDBIcon,
   MDBNavbarNav,
   MDBNavbarItem,
-  MDBNavbarLink,
   MDBBtn,
   MDBDropdown,
   MDBDropdownToggle,
   MDBDropdownMenu,
   MDBDropdownItem,
   MDBCollapse,
+  MDBBadge,
 } from "mdb-react-ui-kit";
+import { Link as NavLink } from "react-router-dom";
 
 export default function Nav() {
   const [showBasic, setShowBasic] = useState(false);
@@ -47,14 +48,14 @@ export default function Nav() {
               const time = Date.now();
               return (
                 <MDBNavbarItem key={index + time}>
-                  <MDBNavbarLink
-                    active
+                  <NavLink
                     aria-current="page"
-                    href={item.path}
-                    className="active"
+                    to={item.path}
+                    className="active text-dark"
                   >
+                    {" "}
                     {item?.title}
-                  </MDBNavbarLink>
+                  </NavLink>
                 </MDBNavbarItem>
               );
             })}
@@ -83,10 +84,6 @@ export default function Nav() {
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavbarItem>
-
-            <MDBNavbarItem>
-              <MDBIcon fab icon="opencart" />
-            </MDBNavbarItem>
           </MDBNavbarNav>
 
           <form className="d-flex input-group w-auto">
@@ -99,6 +96,13 @@ export default function Nav() {
             <MDBBtn color="primary">Search</MDBBtn>
           </form>
         </MDBCollapse>
+
+        <MDBBtn color="dark" outline rounded style={{ position: "relative" }}>
+          <MDBIcon fas icon="shopping-cart" size="xl" />
+          <MDBBadge color="success" notification pill>
+            1
+          </MDBBadge>
+        </MDBBtn>
       </MDBContainer>
     </MDBNavbar>
   );

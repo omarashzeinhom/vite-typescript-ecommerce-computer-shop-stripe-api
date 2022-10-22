@@ -47,9 +47,13 @@ const stripe = new Stripe(
 and add CSS FILES to 
 `index.html`
 ``
+
 #### References
 
 1. [React TypeScript offical language docs](https://www.typescriptlang.org/docs/handbook/react.html)
 2. [Stripe - Usage with TypeScript](https://github.com/stripe/stripe-node#usage-with-typescript)
 3. [cjav_dev answer at  How to use stripe types in typescript Vikram Khemlani](https://stackoverflow.com/questions/59903956/how-to-use-stripe-types-in-typescript)
 4. [Navbar - MDB Boostrap React](https://mdbootstrap.com/docs/react/navigation/navbar/)
+5. [Date.now() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now?retiredLocale=ar)
+6. [Colors - MDBBootstrap](https://mdbootstrap.com/docs/standard/content-styles/colors/)
+7. [Text wrapping and overflow - MDBBootstrap](https://mdbootstrap.com/docs/react/utilities/text/)
