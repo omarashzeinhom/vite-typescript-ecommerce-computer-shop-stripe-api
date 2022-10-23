@@ -17,6 +17,7 @@ import {
 } from "mdb-react-ui-kit";
 import { Link as NavLink } from "react-router-dom";
 import { useShoppingCart } from "../../context/ShoppingCartContext";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 export default function Nav() {
   const [showBasic, setShowBasic] = useState(false);
@@ -101,14 +102,7 @@ export default function Nav() {
           </form>
         </MDBCollapse>
 
-       {cartQuantity > 0 && (
-        <MDBBtn onClick={openCart} color="dark" outline rounded style={{ position: "relative" }} >
-          <MDBIcon fas icon="shopping-cart" size="xl" />
-          <MDBBadge color="success" notification pill>
-           {cartQuantity}
-          </MDBBadge>
-        </MDBBtn>
-       )  }
+       <ShoppingCart/>
       </MDBContainer>
     </MDBNavbar>
   );
