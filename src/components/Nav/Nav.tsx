@@ -16,9 +16,12 @@ import {
   MDBBadge,
 } from "mdb-react-ui-kit";
 import { Link as NavLink } from "react-router-dom";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
 
 export default function Nav() {
   const [showBasic, setShowBasic] = useState(false);
+  const {openCart, cartQuantity} = useShoppingCart();
+
   return (
     <MDBNavbar expand="lg" light bgColor="light">
       <MDBContainer fluid>

@@ -21,13 +21,13 @@ type ProductProps = {
   quantity: number;
 };
 
-export default function Product({
-  id,
-  title,
-  price,
-  imageLink,
-}: ProductProps) {
-  const {getItemQuantity, increaseCartQuantity , decreaseCartQuantity ,removefromCart}= useShoppingCart();
+export default function Product({ id, title, price, imageLink }: ProductProps) {
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removefromCart,
+  } = useShoppingCart();
   const quantity = getItemQuantity(id);
   return (
     <MDBCard key={id}>
@@ -57,24 +57,40 @@ export default function Product({
 
           <MDBCol size={12}>
             {quantity === 0 ? (
-              <MDBBtn color="success" block  onClick={()=>increaseCartQuantity(id)}>
+              <MDBBtn
+                color="success"
+                block
+                onClick={() => increaseCartQuantity(id)}
+              >
                 +
               </MDBBtn>
             ) : (
               <MDBRow>
                 <MDBCol size="3">
-                  <MDBBtn color="success" block  onClick={()=>increaseCartQuantity(id)}>
+                  <MDBBtn
+                    color="success"
+                    block
+                    onClick={() => increaseCartQuantity(id)}
+                  >
                     +
                   </MDBBtn>
                 </MDBCol>
 
                 <MDBCol size={5}>
-                <MDBBtn onClick={()=> removefromCart(id)}>Remove                  <MDBBadge color="dark" pill>{quantity} </MDBBadge>
-</MDBBtn>
+                  <MDBBtn onClick={() => removefromCart(id)}>
+                    Remove{" "}
+                    <MDBBadge color="dark" pill>
+                      {quantity}{" "}
+                    </MDBBadge>
+                  </MDBBtn>
                 </MDBCol>
 
                 <MDBCol size="3">
-                  <MDBBtn color="danger" block onClick={()=>decreaseCartQuantity(id)}>
+                  <MDBBtn
+                    color="danger"
+                    block
+                    onClick={() => decreaseCartQuantity(id)}
+                  >
                     -
                   </MDBBtn>
                 </MDBCol>

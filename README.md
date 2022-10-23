@@ -58,3 +58,4 @@ and add CSS FILES to
 6. [Colors - MDBBootstrap](https://mdbootstrap.com/docs/standard/content-styles/colors/)
 7. [Text wrapping and overflow - MDBBootstrap](https://mdbootstrap.com/docs/react/utilities/text/)
 8. [Icon notifications - MDBBootstrap](https://mdbootstrap.com/docs/react/components/badges/)
+9. [Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
