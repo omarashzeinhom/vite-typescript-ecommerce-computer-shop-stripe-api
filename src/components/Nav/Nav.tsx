@@ -21,10 +21,10 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 export default function Nav() {
   const [showBasic, setShowBasic] = useState(false);
-  const {openCart, cartQuantity} = useShoppingCart();
+  //const {openCart, cartQuantity} = useShoppingCart();
 
   return (
-    <MDBNavbar expand="lg" light bgColor="light"  className="gx-4">
+    <MDBNavbar expand="lg" light bgColor="light" className="gx-4">
       <MDBContainer fluid>
         <MDBNavbarBrand href="/">
           <img
@@ -70,20 +70,18 @@ export default function Nav() {
                 </MDBDropdownToggle>
 
                 <MDBDropdownMenu>
-             
-                    {NavItemsObjectArray.map((item, index) => {
-                      return (
-                        <MDBDropdownItem
-                          link
-                          key={index}
-                          href={item.path}
-                          className="active"
-                        >
-                          {item?.title}
-                        </MDBDropdownItem>
-                      );
-                    })}
-               
+                  {NavItemsObjectArray.map((item, index) => {
+                    return (
+                      <MDBDropdownItem
+                        link
+                        key={index}
+                        href={item.path}
+                        className="active"
+                      >
+                        {item?.title}
+                      </MDBDropdownItem>
+                    );
+                  })}
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavbarItem>
@@ -102,7 +100,7 @@ export default function Nav() {
           </form>
         </MDBCollapse>
 
-       <ShoppingCart/>
+        <ShoppingCart />
       </MDBContainer>
     </MDBNavbar>
   );

@@ -8,7 +8,6 @@ import {
   MDBRow,
 } from "mdb-react-ui-kit";
 import { Product } from "../../components";
-import ShoppingCart from "../../components/ShoppingCart/ShoppingCart";
 import products from "../../data/products.json";
 
 export default function Shop() {

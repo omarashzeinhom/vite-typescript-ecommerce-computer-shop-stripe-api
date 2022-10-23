@@ -10,14 +10,32 @@ import {
   MDBModalFooter,
   MDBBadge,
   MDBIcon,
+  MDBListGroup,
+  MDBListGroupItem,
 } from "mdb-react-ui-kit";
 import { useShoppingCart } from "../../context/ShoppingCartContext";
+import { CartItem } from "..";
 
-export default function ShoppingCart() {
+
+type ShoppingCartProps = {
+  isOpen: boolean
+}
+
+
+
+
+
+
+
+
+
+
+
+export default function ShoppingCart({isOpen}:ShoppingCartProps) {
   const [basicModal, setBasicModal] = useState(false);
 
   const toggleShow = () => setBasicModal(!basicModal);
-  const { openCart, cartQuantity } = useShoppingCart();
+  const { closeCart, cartItems, cartQuantity } = useShoppingCart();
 
   return (
     <>
@@ -47,7 +65,17 @@ export default function ShoppingCart() {
                 onClick={toggleShow}
               ></MDBBtn>
             </MDBModalHeader>
-            <MDBModalBody>...</MDBModalBody>
+            <MDBModalBody>
+              <MDBListGroup style={{ minWidth: '22rem' }} light>
+{cartItems.map((item, index)=>(
+
+<MDBListGroupItem key={index}  className='d-flex justify-content-between align-items-center'>
+ <CartItem key={item.id} {...item}/>
+  </MDBListGroupItem>
+
+
+))}    
+    </MDBListGroup></MDBModalBody>
 
             <MDBModalFooter>
               <MDBBtn color="secondary" onClick={toggleShow}>
