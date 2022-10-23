@@ -102,10 +102,10 @@ export default function Nav() {
           </form>
         </MDBCollapse>
 
-        <MDBBtn color="dark" outline rounded style={{ position: "relative" }}>
+        <MDBBtn onClick={openCart} color="dark" outline rounded style={{ position: "relative" }} >
           <MDBIcon fas icon="shopping-cart" size="xl" />
           <MDBBadge color="success" notification pill>
-            1
+           {cartQuantity}
           </MDBBadge>
         </MDBBtn>
       </MDBContainer>
