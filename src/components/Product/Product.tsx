@@ -10,14 +10,15 @@ import {
   MDBCol,
   MDBRow,
 } from "mdb-react-ui-kit";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
 import { formatCurrency } from "../../utilities/formatCurrency";
 
 type ProductProps = {
-  id?: number;
-  title?: string;
+  id: number;
+  title: string;
   price: number;
-  imageLink?: string;
-  quantity?: number;
+  imageLink: string;
+  quantity: number;
 };
 
 export default function Product({
@@ -25,8 +26,9 @@ export default function Product({
   title,
   price,
   imageLink,
-  quantity,
 }: ProductProps) {
+  const {getItemQuantity, increaseCartQuantity , decreaseCartQuantity ,removefromCart}= useShoppingCart();
+  const quantity = getItemQuantity(id);
   return (
     <MDBCard key={id}>
       <MDBCardHeader>{title}</MDBCardHeader>
@@ -55,23 +57,24 @@ export default function Product({
 
           <MDBCol size={12}>
             {quantity === 0 ? (
-              <MDBBtn color="success" block>
+              <MDBBtn color="success" block  onClick={()=>increaseCartQuantity(id)}>
                 +
               </MDBBtn>
             ) : (
               <MDBRow>
-                <MDBCol size="5">
-                  <MDBBtn color="success" block>
+                <MDBCol size="3">
+                  <MDBBtn color="success" block  onClick={()=>increaseCartQuantity(id)}>
                     +
                   </MDBBtn>
                 </MDBCol>
 
-                <MDBCol size={2}>
-                  <MDBBadge color="dark">{quantity}</MDBBadge>
+                <MDBCol size={5}>
+                <MDBBtn onClick={()=> removefromCart(id)}>Remove                  <MDBBadge color="dark" pill>{quantity} </MDBBadge>
+</MDBBtn>
                 </MDBCol>
 
-                <MDBCol size="5">
-                  <MDBBtn color="danger" block>
+                <MDBCol size="3">
+                  <MDBBtn color="danger" block onClick={()=>decreaseCartQuantity(id)}>
                     -
                   </MDBBtn>
                 </MDBCol>
