@@ -7,14 +7,17 @@ import {
   MDBCardHeader,
   MDBBadge,
   MDBCardText,
+  MDBCol,
+  MDBRow,
 } from "mdb-react-ui-kit";
+import { formatCurrency } from "../../utilities/formatCurrency";
 
 type ProductProps = {
-  id: number;
-  title: string;
+  id?: number;
+  title?: string;
   price: number;
-  imageLink: string;
-  quantity: number;
+  imageLink?: string;
+  quantity?: number;
 };
 
 export default function Product({
@@ -43,15 +46,39 @@ export default function Product({
         }}
       />
       <MDBCardBody>
-        <MDBCardText>
-          {price + "$"} <MDBBadge color="dark"> Quantity:{quantity}</MDBBadge>
-        </MDBCardText>
+        <MDBCardText>{formatCurrency(price)}</MDBCardText>
       </MDBCardBody>
 
       <MDBCardFooter>
-        <MDBBtn color="success" block>
-          +
-        </MDBBtn>
+        <MDBRow>
+          <MDBBadge color="dark"> Quantity : {quantity}</MDBBadge>
+
+          <MDBCol size={12}>
+            {quantity === 0 ? (
+              <MDBBtn color="success" block>
+                +
+              </MDBBtn>
+            ) : (
+              <MDBRow>
+                <MDBCol size="5">
+                  <MDBBtn color="success" block>
+                    +
+                  </MDBBtn>
+                </MDBCol>
+
+                <MDBCol size={2}>
+                  <MDBBadge color="dark">{quantity}</MDBBadge>
+                </MDBCol>
+
+                <MDBCol size="5">
+                  <MDBBtn color="danger" block>
+                    -
+                  </MDBBtn>
+                </MDBCol>
+              </MDBRow>
+            )}
+          </MDBCol>
+        </MDBRow>
       </MDBCardFooter>
     </MDBCard>
   );
