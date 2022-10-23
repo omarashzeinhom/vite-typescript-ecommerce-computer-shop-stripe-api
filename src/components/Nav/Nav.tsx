@@ -23,7 +23,7 @@ export default function Nav() {
   const {openCart, cartQuantity} = useShoppingCart();
 
   return (
-    <MDBNavbar expand="lg" light bgColor="light">
+    <MDBNavbar expand="lg" light bgColor="light"  className="gx-4">
       <MDBContainer fluid>
         <MDBNavbarBrand href="/">
           <img
@@ -46,7 +46,7 @@ export default function Nav() {
         </MDBNavbarToggler>
 
         <MDBCollapse navbar show={showBasic}>
-          <MDBNavbarNav className="mr-auto mb-2 mb-lg-0">
+          <MDBNavbarNav className="gx-5 mr-auto mb-2 mb-lg-0 ">
             {NavItemsObjectArray.map((item, index) => {
               const time = Date.now();
               return (
@@ -54,9 +54,8 @@ export default function Nav() {
                   <NavLink
                     aria-current="page"
                     to={item.path}
-                    className="active text-dark"
+                    className="active text-dark me-5 mx-1 my-4"
                   >
-                    {" "}
                     {item?.title}
                   </NavLink>
                 </MDBNavbarItem>
@@ -70,7 +69,7 @@ export default function Nav() {
                 </MDBDropdownToggle>
 
                 <MDBDropdownMenu>
-                  <>
+             
                     {NavItemsObjectArray.map((item, index) => {
                       return (
                         <MDBDropdownItem
@@ -83,7 +82,7 @@ export default function Nav() {
                         </MDBDropdownItem>
                       );
                     })}
-                  </>
+               
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavbarItem>
@@ -102,12 +101,14 @@ export default function Nav() {
           </form>
         </MDBCollapse>
 
+       {cartQuantity > 0 && (
         <MDBBtn onClick={openCart} color="dark" outline rounded style={{ position: "relative" }} >
           <MDBIcon fas icon="shopping-cart" size="xl" />
           <MDBBadge color="success" notification pill>
            {cartQuantity}
           </MDBBadge>
         </MDBBtn>
+       )  }
       </MDBContainer>
     </MDBNavbar>
   );

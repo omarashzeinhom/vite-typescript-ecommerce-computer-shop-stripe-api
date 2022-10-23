@@ -76,11 +76,11 @@ export default function Product({ id, title, price, imageLink }: ProductProps) {
                   </MDBBtn>
                 </MDBCol>
 
-                <MDBCol size={5}>
-                  <MDBBtn onClick={() => removefromCart(id)}>
-                    Remove{" "}
+                <MDBCol size={6}>
+                  <MDBBtn block onClick={() => removefromCart(id)}>
+                    Remove
                     <MDBBadge color="dark" pill>
-                      {quantity}{" "}
+                      {quantity}
                     </MDBBadge>
                   </MDBBtn>
                 </MDBCol>
