@@ -15,23 +15,14 @@ import {
 } from "mdb-react-ui-kit";
 import { useShoppingCart } from "../../context/ShoppingCartContext";
 import { CartItem } from "..";
-
+import { formatCurrency } from "../../utilities/formatCurrency";
+import storeProducts from "../../data/products.json";
 
 type ShoppingCartProps = {
-  isOpen: boolean
-}
+  isOpen: boolean;
+};
 
-
-
-
-
-
-
-
-
-
-
-export default function ShoppingCart({isOpen}:ShoppingCartProps) {
+export default function ShoppingCart({ isOpen }: ShoppingCartProps) {
   const [basicModal, setBasicModal] = useState(false);
 
   const toggleShow = () => setBasicModal(!basicModal);
@@ -66,16 +57,27 @@ export default function ShoppingCart({isOpen}:ShoppingCartProps) {
               ></MDBBtn>
             </MDBModalHeader>
             <MDBModalBody>
-              <MDBListGroup style={{ minWidth: '22rem' }} light>
-{cartItems.map((item, index)=>(
+              <MDBListGroup style={{ minWidth: "22rem" }} light>
+                {cartItems.map((item, index) => (
+                  <MDBListGroupItem
+                    key={index}
+                    className="d-flex justify-content-between align-items-center"
+                  >
+                    <CartItem key={item.id} {...item} />
+                  </MDBListGroupItem>
+                ))}
+              </MDBListGroup>
+            </MDBModalBody>
 
-<MDBListGroupItem key={index}  className='d-flex justify-content-between align-items-center'>
- <CartItem key={item.id} {...item}/>
-  </MDBListGroupItem>
-
-
-))}    
-    </MDBListGroup></MDBModalBody>
+            <div className="me-auto mb-5">
+              Total :{" "}
+              {formatCurrency(
+                cartItems.reduce((total, cartItem) => {
+                  const item = storeProducts.find((i) => i.id === cartItem.id);
+                  return total + (item?.price || 0) * cartItem?.quantity;
+                }, 0)
+              )}
+            </div>
 
             <MDBModalFooter>
               <MDBBtn color="secondary" onClick={toggleShow}>
