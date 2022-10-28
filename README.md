@@ -12,7 +12,7 @@
 
 [Vite js Docs - Scaffolding Your First Vite Project](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
 
-```
+```bash
 yarn create vite
 ```
 
@@ -22,18 +22,7 @@ yarn create vite
 - Start Server by ```yarn run dev```
 - Go to ```http://127.0.0.1:5173/```
 
-```
-import Stripe from 'stripe';
-const stripe = new Stripe(
-  'sk_test_...', 
-  {
-    apiVersion: '2019-12-03',
-    typescript: true,
-  }
-)
-```
-
-#### Packages installed 
+### Packages installed
 
 - [react-router-dom](https://yarnpkg.com/package/react-router-dom)
   
@@ -41,12 +30,36 @@ const stripe = new Stripe(
   
 - [stripe js sdk](https://github.com/stripe/stripe-node#installation)
 
-- Packages were added using 
+- Packages were added using
   ```yarn add mdb-react-ui-kit react-router-dom stripe @fortawesome/fontawesome-free```
 
-and add CSS FILES to 
+and add CSS FILES to
 `index.html`
 ``
+
+1. Usage with TypeScript in Stripe
+
+#### Usage
+
+[stripe - github](https://github.com/stripe/stripe-node#installation)
+
+```js
+import Stripe from 'stripe';
+const stripe = new Stripe('sk_test_...', {
+  apiVersion: '2022-08-01',
+});
+
+const createCustomer = async () => {
+  const params: Stripe.CustomerCreateParams = {
+    description: 'test customer',
+  };
+
+  const customer: Stripe.Customer = await stripe.customers.create(params);
+
+  console.log(customer.id);
+};
+createCustomer();
+```
 
 #### References
 
